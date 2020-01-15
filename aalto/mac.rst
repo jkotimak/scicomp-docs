@@ -87,11 +87,17 @@ First install Xcode through Managed Software Centre (either search Xcode, or nav
 	# Go to wherever you want to have your Brew and run this
 	mkdir Homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz -C Homebrew --strip 1
 
-	# This is a MUST!!!
-	echo "export PATH=\$PATH:$(pwd)/Homebrew/bin" >> ~/.bash_profile
+	# This is a MUST!!! Note that newer installations of MacOS user zsh instead of bash:
 
+	# if you are using bash:
+	echo "export PATH=\$PATH:$(pwd)/Homebrew/bin" >> ~/.bash_profile
 	# Reload the profile
 	source ~/.bash_profile
+
+	# if you are using zsh:	
+	echo "export PATH=\$PATH:$(pwd)/Homebrew/bin" >> ~/.zshrc
+	# Reload the profile
+	source ~/.zshrc
 
 	# Check if brew is correctly installed.
 	which brew    # /Users/username/Homebrew/bin/brew
